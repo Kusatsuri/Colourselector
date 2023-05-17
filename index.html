@@ -1,16 +1,30 @@
 <h1>Hello, I am a colourselector</h1>
 <div>
-    <input type="range" min="0" max="255">
-    <div class="min_value">0</div>
-    <div class="max_value">255</div>
-    
+    <div class="slider">
+        <input type="range" min="0" max="255">
+        <div class="min_value">0</div>
+        <div class="max_value">255</div>
+        <div class="current_value">X=</div>
+    </div>
 
 </div>
 
 <style>
-    input{width: 255px; display: block;}
-    div.min_value{display: inline-block;width: 240px;}
-    div.max_value{display: inline-block;}
-
-
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+  html{font-family: 'Roboto Condensed', sans-serif;}  
+  h1{font-style: italic;}
+  input{width: 95%; display: block;}
+    div.min_value{display: inline-block}
+    div.max_value{display: inline-block;float: right}
+    div.slider{width: 255px;sbackground-color: blue;position: relative;}
+    div.current_value
+    {
+        sbackground-color: greenyellow;
+        position: absolute;
+        top: 7px;
+        left: 110%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+/* I am a comment */
 </style>
