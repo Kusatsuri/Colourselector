@@ -1,11 +1,12 @@
 <h1>Hello, I am a colourselector</h1>
 <div>
-    <div class="slider">
+    <div class="slider" ID="red">
         <input type="range" min="0" max="255">
         <div class="min_value">0</div>
         <div class="max_value">255</div>
         <div class="current_value">X=</div>
     </div>
+    <!--<current_value> now current value is an element-->
 
 </div>
 
@@ -28,3 +29,16 @@
     }
 /* I am a comment */
 </style>
+
+<script>
+    //everything in here will be written in javascript
+    //for making changes in the page, e.g. X should be an updated number
+    let el=document.querySelector(".current_value")
+    //el.style.color="red"
+    //el.innerHTML="X=5"
+    let nr=document.querySelector("input")
+    el.innerHTML="X=" + nr.value
+    //document gives us excess to everything on that page
+    //querySelecotr gives me acces to one element in html
+    //dot in front of current_value looks for the class of current value
+</script>
