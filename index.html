@@ -27,18 +27,40 @@
         font-size: 20px;
         font-weight: bold;
     }
-/* I am a comment */
+/* I am a comment*/
+/*.sth means an element that has class sth.*/
 </style>
 
 <script>
-    //everything in here will be written in javascript
-    //for making changes in the page, e.g. X should be an updated number
-    let el=document.querySelector(".current_value")
-    //el.style.color="red"
-    //el.innerHTML="X=5"
+
+    function updateValueX()
+    {
+        //everything in here will be written in javascript
+        //for making changes in the page, e.g. X should be an updated number
+        //before . it is an object, document has a querySelector e.g.
+        let el=document.querySelector(".current_value")
+        //el.style.color="red"
+        //el.innerHTML="X=5"
+        let nr=document.querySelector("input")
+        el.innerHTML="X=" + nr.value
+        //nr. value means the value of nr
+        //document gives us excess to everything on that page
+        //querySelecotr gives me acces to one element in html
+        //dot in front of current_value looks for the class of current value
+    }
+
+    updateValueX()
+
     let nr=document.querySelector("input")
-    el.innerHTML="X=" + nr.value
-    //document gives us excess to everything on that page
-    //querySelecotr gives me acces to one element in html
-    //dot in front of current_value looks for the class of current value
+    nr.addEventListener("change", updateValueX)
+    
+    //function karo()
+    //{alert("karo")}
+
+   // document.querySelector(".slider").addEventListener("click", karo)
+    
+
+
+
+
 </script>
