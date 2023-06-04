@@ -4,10 +4,25 @@
         <input type="range" min="0" max="255">
         <div class="min_value">0</div>
         <div class="max_value">255</div>
-        <div class="current_value">X=</div>
+        <div class="current_value">R=</div>
+        <!--wenn man Space drückt in der class dann hat die class zwei namen und man kann zu beiden zurückgreifen-->
     </div>
     <!--<current_value> now current value is an element-->
+    <div class="slider" ID="green">
+        <input type="range" min="0" max="255">
+        <div class="min_value">0</div>
+        <div class="max_value">255</div>
+        <div class="current_value">G=</div>
+    </div>   
+    <div class="slider" ID="blue">
+        <input type="range" min="0" max="255">
+        <div class="min_value">0</div>
+        <div class="max_value">255</div>
+        <div class="current_value">B=</div>
+    </div>
+    <div class="box">
 
+    </div>
 </div>
 
 <style>
@@ -27,40 +42,55 @@
         font-size: 20px;
         font-weight: bold;
     }
+    .slider{margin-bottom: 20px;}
+    #red input{accent-color: red;}
+    #green input{accent-color: green;}
+    #blue input{accent-color: blue;}
+    .box{height: 100px;width: 100px;border: 1px solid black;}
 /* I am a comment*/
 /*.sth means an element that has class sth.*/
 </style>
 
 <script>
 
-    function updateValueX()
+    function updateValues()
     {
         //everything in here will be written in javascript
         //for making changes in the page, e.g. X should be an updated number
         //before . it is an object, document has a querySelector e.g.
-        let el=document.querySelector(".current_value")
+        let el_R=document.querySelector("#red .current_value")
+        let el_G=document.querySelector("#green .current_value")
+        let el_B=document.querySelector("#blue .current_value")
         //el.style.color="red"
         //el.innerHTML="X=5"
-        let nr=document.querySelector("input")
-        el.innerHTML="X=" + nr.value
+        let nr_R=document.querySelector("#red input")
+        let nr_G=document.querySelector("#green input")
+        let nr_B=document.querySelector("#blue input")
+        el_R.innerHTML= "R="+nr_R.value
+        el_G.innerHTML= "G="+nr_G.value
+        el_B.innerHTML= "B="+nr_B.value
         //nr. value means the value of nr
         //document gives us excess to everything on that page
         //querySelecotr gives me acces to one element in html
         //dot in front of current_value looks for the class of current value
+        let box=document.querySelector(".box")
+        box.style.backgroundColor=("rgb("+nr_R.value+","+nr_G.value+","+nr_B.value+")")
+        
     }
 
-    updateValueX()
+    updateValues()
 
-    let nr=document.querySelector("input")
-    nr.addEventListener("change", updateValueX)
+
+    let nr_R=document.querySelector("#red input")
+    nr_R.addEventListener("input", updateValues) //different input compared to Line 54, here it is name of the event
+    let nr_G=document.querySelector("#green input")
+    nr_G.addEventListener("input", updateValues)
+    let nr_B=document.querySelector("#blue input")
+    nr_B.addEventListener("input", updateValues)
     
+
     //function karo()
     //{alert("karo")}
 
    // document.querySelector(".slider").addEventListener("click", karo)
-    
-
-
-
-
 </script>
